@@ -1,6 +1,7 @@
 module Calculator where
 
-import Prelude
+import Prelude hiding (Negate)
+import Data.Floating
 
 data Expr = Add Expr Expr
           | Sub Expr Expr
@@ -12,5 +13,18 @@ data Expr = Add Expr Expr
           | Val Int 
           deriving (Show)
 
-
 --Start implementing 
+
+addExpr :: Expr -> Expr -> Int
+
+subExpr :: Expr -> Expr -> Int
+
+mulExpr :: Expr -> Expr -> Int
+
+divExpr :: Expr -> Expr -> Float
+
+modExpr :: Expr -> Expr -> Int
+
+sqrExpr :: Expr -> Int
+
+negExpr :: Expr -> Int
