@@ -5,8 +5,8 @@ A calculator implemented by Haskell
 ## Team Members
 
 Drake Ryan Evans - Evansdr
-Inez Hernandez Fuerte -
-Lea Kathryn Messenger -
+Inez Hernandez Fuerte - hernanin
+Lea Kathryn Messenger - messengl
 Zijing (Allen) Huang - huangzij
 
 
