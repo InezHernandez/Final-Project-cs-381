@@ -1,9 +1,15 @@
 # Final Project Milestone
 
-A caculator implemented by Haskell
+A calculator implemented by Haskell
 
 ## Installation
 
 ## Features
+
+Operations:
+* Addition
+* Subtraction
+* Multiplication
+* Division
 
 ## Command
