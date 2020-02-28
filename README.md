@@ -12,7 +12,7 @@ A calculator implemented by Haskell
 
 ## Introduction
 
-For this project we are focusing on creating a simple Haskell calculator. It will include all the standard operations addition, subtraction, multiplication, and division and this calculator will be named Scoop++. After some considerations the programming paradigm that Scoop++ will be designed in is the functional paradigm. The stack-based paradigm would have also been a good option, but the functional paradigm also provided similar benefits and a bit more flexibility.
+For this project, we are focusing on creating a simple Haskell calculator. It will include all the standard operations addition, subtraction, multiplication, and division and this calculator will be named Scoop++. After some considerations, the programming paradigm that Scoop++ will be designed in is the functional paradigm. The stack-based paradigm would have also been a good option, but the functional paradigm also provided similar benefits and a bit more flexibility.
 
 ## Features
 
