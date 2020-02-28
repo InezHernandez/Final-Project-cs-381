@@ -133,17 +133,17 @@ getCh  = do hSetEcho stdin False
             return c
 
 box :: [String]
-box = ["+-DEC-----------+",
+box = ["+---DEC--MODE---+",
        "|               |",
        "|               |",
        "+---+---+---+---+",
        "| Q | C | D | M |",
        "+---+---+---+---+",
-       "| 1 | 2 | 3 | + |",
+       "| 7 | 8 | 9 | + |",
        "+---+---+---+---+",
        "| 4 | 5 | 6 | - |",
        "+---+---+---+---+",
-       "| 7 | 8 | 9 | * |",
+       "| 1 | 2 | 3 | * |",
        "+---+---+---+---+",
        "| 0 | ( | ) | / |",
        "+---+---+---+---+",
@@ -185,7 +185,7 @@ process n c xs
   | c == 'D' = (if xs == "" then calc n "" else calc n (init xs))            -- delete
   | c == 'C' = calc n ""                                                     -- clear
   | c == '=' = eval n xs                                                     -- eval
-  | c == 'M' = do if n == 0 then writeAt(1,3) "HEX" else writeAt(1,3) "DEC"
+  | c == 'M' = do if n == 0 then writeAt(1,5) "HEX" else writeAt(1,5) "DEC"
                   if n == 0 then calc 1 xs else calc 0 xs                    -- change mode
   | elem c buttons = calc n (xs ++ [c])                                      -- press
   | otherwise = calc n xs
