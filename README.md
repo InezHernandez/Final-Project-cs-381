@@ -21,7 +21,6 @@ Operations include:
 * Subtraction
 * Multiplication
 * Division
-
-Boolean calculator:
+* Powers of n
 
 ## Instructions
