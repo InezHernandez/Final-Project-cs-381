@@ -24,3 +24,18 @@ Operations include:
 * Powers of n
 
 ## Instructions
+```Bash
+  $ cd src
+  $ ghci Calculator.hs
+  *Main> main
+```
+
+### Enabled Functionalities
+ - `Cap M`: change between HEX and DEC mode.
+ - `Cap D`: delete
+ - `Cap C`: all clear
+ - `Cap Q`: quit
+ - `sqr()`: square
+ - `neg()`: negation
+ - `+-*/%`: operators
+ - `()`: order parser
