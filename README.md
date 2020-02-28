@@ -4,10 +4,10 @@ A calculator implemented by Haskell
 
 ## Team Members
 
-Drake Ryan Evans - Evansdr
-Inez Hernandez Fuerte - hernanin
-Lea Kathryn Messenger - messengl
-Zijing (Allen) Huang - huangzij
+* Drake Ryan Evans - Evansdr
+* Inez Hernandez Fuerte - hernanin
+* Lea Kathryn Messenger - messengl
+* Zijing (Allen) Huang - huangzij
 
 
 ## Introduction
@@ -16,10 +16,12 @@ We are creating a Haskell calculator that will include all the standard operatio
 
 ## Features
 
-Operations:
+Operations include:
 * Addition
 * Subtraction
 * Multiplication
 * Division
 
-## Command
+Boolean calculator:
+
+## Instructions
