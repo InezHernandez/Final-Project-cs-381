@@ -1,0 +1,95 @@
+import Data.Char
+import Data.Char (ord)
+import Data.Char (chr)
+-- cipher haskell calculator:
+-- in the README we would give the user directions:
+-- enter: firstCycle 7 * 10 then they would get back an ascii char -> p
+-- then so on, they enter a few more addition, sub, power, etc and get out a few more letter
+-- let say pasta, then they would be asked to enter that string that they GOT
+-- back into the program secondCycle pasta, then the output would be a Caesar shift of forwards
+-- or backwards using succ and pred, atsap etc.
+-- below is some pseudo code, but I am having trouble on
+-- from the calculation, getting that value and saving it to be able to pass into the ascii converter
+
+
+data Expr = Add Expr Expr
+          | Sub Expr Expr
+          | Mul Expr Expr
+          | Div Expr Expr
+          | Mod Expr Expr
+          | Sqr Expr
+          | Neg Expr
+          | Val Int
+          deriving (Eq, Show)
+
+--Start implementing definitions
+
+expr :: Expr -> someVal -> Maybe Int
+expr (Add x y) someVal = case (expr x, expr y) of
+                 (Just x, Just y) -> Just (x + y)
+                 _                -> Nothing
+--expr (Sub x y) = case (expr x, expr y) of
+--                 (Just x, Just y) -> Just (x - y)
+--                 _                -> Nothing
+--expr (Mul x y) = case (expr x, expr y) of
+--                 (Just x, Just y) -> Just (x * y)
+--                 _                -> Nothing
+--expr (Div x y) = case (expr x, expr y) of
+--                 (Just x, Just 0) -> Nothing
+--                 (Just x, Just y) -> Just (x `div` y)
+--                 _                -> Nothing
+--expr (Mod x y) = case (expr x, expr y) of
+--                 (Just x, Just 0) -> Nothing
+--                 (Just x, Just y) -> Just (x `mod` y)
+--                 _                -> Nothing
+--expr (Sqr x)   = case expr x of
+--                 Just x -> Just (x * x)
+--                 _      -> Nothing
+--expr (Neg x)   = case expr x of
+--                 Just x -> Just (negate x)
+--                 _      -> Nothing
+--expr (Val x)   = Just x -- == saveValue (doesn't compile)
+
+--main = do -- my attempt at saving the expr output
+-- think it should be like:
+-- expr :: Expr -> saveValue
+--  expr (Val x) = Just x == saveValue?
+--  putStrLn ("Expression is: " ++ x)
+
+
+
+
+-- first get the ascii cipher working!
+-- get user input [1 + 2 + 3] CHECK WE GOT THIS DONE!
+-- how to pass value to our function?
+-- if the value falls between the range 61 - 79 (or 7A)
+-- then return a single letter value
+-- otherwise return nothing
+-- ex: cipher [10 * 7] -> 70 -> p (lowercase chars only for simplicity of design)
+
+-- Pseudo code: (from https://codereview.stackexchange.com/questions/148307/caesar-shift-in-haskell)
+-- cypher: lowercase ascii values: from 61 -> 7A
+-- we could modify, so that instead of values from zero to whatever
+-- we have values from 61 -> 79 shift up or backwards. but this is if we can get to it.
+--shiftStr :: Int -> [Char] -> [Char]
+--shiftStr num str
+--       | num > 0  = shiftStr (num - 1) (map shiftForwards str)
+--       | num < 0  = shiftStr (num + 1) (map shiftBackwards str)
+--       | num == 0 = str
+
+--shiftForwards :: Char -> Char
+--shiftForwards 'z' = 'a'
+--shiftForwards c   = succ c
+
+--shiftBackwards :: Char -> Char
+--shiftBackwards 'a' = 'z'
+--shiftBackwards c   = pred c
+
+-- attempt to do the int -> Ascii conversion
+-- fromEnum / toEnum : fromEnum 'a' == 97 (toEnum 97::Char) == 'a'
+--toEnum :: Int -> a
+
+someVal = 97
+main = print (chr someVal) -- this is the one we want, but how to dynamically code? instead of 97 we would have someVal
+-- toEnm :: Int -> Char
+-- toEnm 97 = 'a'
