@@ -1,6 +1,6 @@
 # Final Project Milestone
 
-A calculator implemented by Haskell
+A Haskell calculator that serves to dycrypt messages, if you know the way.
 
 ## Team Members
 
@@ -12,7 +12,7 @@ A calculator implemented by Haskell
 
 ## Introduction
 
-For this project, we are focusing on creating a simple Haskell calculator. It will include all the standard operations addition, subtraction, multiplication, and division and this calculator will be named Scoop++. After some considerations, the programming paradigm that Scoop++ will be designed in is the functional paradigm. The stack-based paradigm would have also been a good option, but the functional paradigm also provided similar benefits and a bit more flexibility.
+For this project, we are focusing on creating a simple Haskell calculator that serves as the back bone for our cipher. When a user inputs an operation they will get back an ascii lowercase letter. Once thye have gathered enough charactes they will use our langauge to decode the message using a Caesar cipher. It will include all the standard operations addition, subtraction, multiplication, and division and this calculator will be named Scoop++. After some considerations, the programming paradigm that Scoop++ will be designed in is the functional paradigm. The stack-based paradigm would have also been a good option, but the functional paradigm also provided similar benefits and a bit more flexibility.
 
 ## Features
 
@@ -22,5 +22,8 @@ Operations include:
 * Multiplication
 * Division
 * Powers of n
+* Produce an ascii value between 97 - 122
+* Return a character
+* Allow user to enter that string to decode using our cipher.
 
 ## Instructions
