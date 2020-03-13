@@ -26,9 +26,9 @@ data Expr = Add Expr Expr
 --Start implementing definitions
 
 expr :: Expr -> Maybe Int
-expr (Add x y) = let userinput = case (expr x, expr y) of
-                                (Just x, Just y) -> Just (x + y)
-                                _                -> Nothing
+expr (Add x y) = case (expr x, expr y) of
+                (Just x, Just y) -> Just (x + y)
+                _                -> Nothing
 -- expr (Sub x y) = case (expr x, expr y) of
 --                 (Just x, Just y) -> Just (x - y)
 --                 _                -> Nothing
@@ -90,7 +90,9 @@ shiftBackwards c   = pred c
 -- fromEnum / toEnum : fromEnum 'a' == 97 (toEnum 97::Char) == 'a'
 --toEnum :: Int -> a
 
---someVal = 97
+someVal = 97
+main = print (chr someVal) -- this is the one we want, but how to dynamically code? instead of 97 we would have someVal
+
 intChar :: Int -> Char
 intChar 97 = 'a'
 intChar 98 = 'b'
@@ -118,6 +120,3 @@ intChar 119 = 'w'
 intChar 120 = 'x'
 intChar 121 = 'y'
 intChar 122 = 'z'
-
---main = print (chr someVal) -- this is the one we want, but how to dynamically code? instead of 97 we would have someVal
-
