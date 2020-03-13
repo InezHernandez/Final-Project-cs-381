@@ -10,27 +10,27 @@ data Expr = Add Expr Expr
           | Val Int
           deriving (Eq, Show)
 
---Start implementing definitions
+-- Start implementing definitions
 
 expr :: Expr -> Maybe Int
-expr (Add x y) = case (expr x, expr y) of 
+expr (Add x y) = case (expr x, expr y) of
                  (Just x, Just y) -> Just (x + y)
                  _                -> Nothing
-expr (Sub x y) = case (expr x, expr y) of 
+expr (Sub x y) = case (expr x, expr y) of
                  (Just x, Just y) -> Just (x - y)
                  _                -> Nothing
-expr (Mul x y) = case (expr x, expr y) of 
+expr (Mul x y) = case (expr x, expr y) of
                  (Just x, Just y) -> Just (x * y)
                  _                -> Nothing
 expr (Div x y) = case (expr x, expr y) of
-                 (Just x, Just 0) -> Nothing 
+                 (Just x, Just 0) -> Nothing
                  (Just x, Just y) -> Just (x `div` y)
                  _                -> Nothing
-expr (Mod x y) = case (expr x, expr y) of 
+expr (Mod x y) = case (expr x, expr y) of
                  (Just x, Just 0) -> Nothing
                  (Just x, Just y) -> Just (x `mod` y)
                  _                -> Nothing
-expr (Sqr x)   = case expr x of 
+expr (Sqr x)   = case expr x of
                  Just x -> Just (x * x)
                  _      -> Nothing
 expr (Neg x)   = case expr x of

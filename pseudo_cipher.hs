@@ -23,7 +23,7 @@ data Expr = Add Expr Expr
           | Val Int
           deriving (Eq, Show)
 
---Start implementing definitions
+-- Start implementing definitions
 
 expr :: Expr -> Maybe Int
 expr (Add x y) = case (expr x, expr y) of
@@ -51,11 +51,11 @@ expr (Add x y) = case (expr x, expr y) of
 --                 _      -> Nothing
 -- expr (Val x)   = Just x -- == saveValue (doesn't compile)
 
---main = do -- my attempt at saving the expr output
+-- main = do -- my attempt at saving the expr output
 -- think it should be like:
 -- expr :: Expr -> saveValue
---  expr (Val x) = Just x == saveValue?
---  putStrLn ("Expression is: " ++ x)
+-- expr (Val x) = Just x == saveValue?
+-- putStrLn ("Expression is: " ++ x)
 
 
 
@@ -72,8 +72,8 @@ expr (Add x y) = case (expr x, expr y) of
 -- cypher: lowercase ascii values: from 61 -> 7A
 -- we could modify, so that instead of values from zero to whatever
 -- we have values from 61 -> 79 shift up or backwards. but this is if we can get to it.
---shiftStr :: Int -> [Char] -> [Char]
---shiftStr num str
+-- shiftStr :: Int -> [Char] -> [Char]
+-- shiftStr num str
 --       | num > 0  = shiftStr (num - 1) (map shiftForwards str)
 --       | num < 0  = shiftStr (num + 1) (map shiftBackwards str)
 --       | num == 0 = str
@@ -88,7 +88,7 @@ shiftBackwards c   = pred c
 
 -- attempt to do the int -> Ascii conversion
 -- fromEnum / toEnum : fromEnum 'a' == 97 (toEnum 97::Char) == 'a'
---toEnum :: Int -> a
+-- toEnum :: Int -> a
 
 someVal = 97
 main = print (chr someVal) -- this is the one we want, but how to dynamically code? instead of 97 we would have someVal
