@@ -27,7 +27,6 @@ Operations include:
 * Allow user to enter that string to decode using our cipher.
 
 ## Instructions
-<<<<<<< Updated upstream
 Your mission is to decode the following 100 + 2 * 2 + 1, 111 - 3^2, 100/2 * 2 + 9, 100/2 * 2 + 9, 10 * 10 + 12.
 How you will accomplish this:
 
@@ -41,11 +40,9 @@ You have now decoded the mission critical code! Nice work!
 
 (type in caesarCipher 1 "ifmmp') -> that would be the resulting value if our code was 100%
 
-=======
 ```Bash
   $ ghci Calculator.hs
   *Main> shiftForwards 'a,b,c....'
   *Main> shiftBackwards 'a,b,c....'
   *Main> expr 'a,b,c....'
 ```
->>>>>>> Stashed changes
