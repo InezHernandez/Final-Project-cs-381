@@ -30,12 +30,16 @@ Operations include:
 <<<<<<< Updated upstream
 Your mission is to decode the following 100 + 2 * 2 + 1, 111 - 3^2, 100/2 * 2 + 9, 100/2 * 2 + 9, 10 * 10 + 12.
 How you will accomplish this:
+
 First, type in each equation 100 + 2 * 2 + 1 press enter. Continue doing so for each equation above.
+
 Once you finish, you will have a resulting string.
+
 Type in caesarCipher along with the string value you have. Press enter.
+
 You have now decoded the mission critical code! Nice work!
 
-
+(type in caesarCipher 1 "ifmmp') -> that would be the resulting value if our code was 100%
 
 =======
 ```Bash
