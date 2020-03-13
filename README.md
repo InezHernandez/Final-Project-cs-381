@@ -1,4 +1,4 @@
-# Final Project Milestone
+# Final Project
 
 A Haskell calculator that serves to dycrypt messages, if you know the way.
 
@@ -27,6 +27,7 @@ Operations include:
 * Allow user to enter that string to decode using our cipher.
 
 ## Instructions
+<<<<<<< Updated upstream
 Your mission is to decode the following 100 + 2 * 2 + 1, 111 - 3^2, 100/2 * 2 + 9, 100/2 * 2 + 9, 10 * 10 + 12.
 How you will accomplish this:
 First, type in each equation 100 + 2 * 2 + 1 press enter. Continue doing so for each equation above.
@@ -36,3 +37,11 @@ You have now decoded the mission critical code! Nice work!
 
 
 
+=======
+```Bash
+  $ ghci Calculator.hs
+  *Main> shiftForwards 'a,b,c....'
+  *Main> shiftBackwards 'a,b,c....'
+  *Main> expr 'a,b,c....'
+```
+>>>>>>> Stashed changes
