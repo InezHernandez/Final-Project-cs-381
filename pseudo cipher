@@ -24,31 +24,31 @@ data Expr = Add Expr Expr
 
 --Start implementing definitions
 
-expr :: Expr -> someVal -> Maybe Int
-expr (Add x y) someVal = case (expr x, expr y) of
+expr :: Expr -> Maybe Int
+expr (Add x y) = case (expr x, expr y) of
                  (Just x, Just y) -> Just (x + y)
                  _                -> Nothing
---expr (Sub x y) = case (expr x, expr y) of
+-- expr (Sub x y) = case (expr x, expr y) of
 --                 (Just x, Just y) -> Just (x - y)
 --                 _                -> Nothing
---expr (Mul x y) = case (expr x, expr y) of
+-- expr (Mul x y) = case (expr x, expr y) of
 --                 (Just x, Just y) -> Just (x * y)
 --                 _                -> Nothing
---expr (Div x y) = case (expr x, expr y) of
+-- expr (Div x y) = case (expr x, expr y) of
 --                 (Just x, Just 0) -> Nothing
 --                 (Just x, Just y) -> Just (x `div` y)
 --                 _                -> Nothing
---expr (Mod x y) = case (expr x, expr y) of
+-- expr (Mod x y) = case (expr x, expr y) of
 --                 (Just x, Just 0) -> Nothing
 --                 (Just x, Just y) -> Just (x `mod` y)
 --                 _                -> Nothing
---expr (Sqr x)   = case expr x of
+-- expr (Sqr x)   = case expr x of
 --                 Just x -> Just (x * x)
 --                 _      -> Nothing
---expr (Neg x)   = case expr x of
+-- expr (Neg x)   = case expr x of
 --                 Just x -> Just (negate x)
 --                 _      -> Nothing
---expr (Val x)   = Just x -- == saveValue (doesn't compile)
+-- expr (Val x)   = Just x -- == saveValue (doesn't compile)
 
 --main = do -- my attempt at saving the expr output
 -- think it should be like:
@@ -91,5 +91,31 @@ expr (Add x y) someVal = case (expr x, expr y) of
 
 someVal = 97
 main = print (chr someVal) -- this is the one we want, but how to dynamically code? instead of 97 we would have someVal
--- toEnm :: Int -> Char
--- toEnm 97 = 'a'
+intChar :: Int -> Char
+intChar 97 = 'a'
+intChar 98 = 'b'
+intChar 99 = 'c'
+intChar 100 = 'd'
+intChar 101 = 'e'
+intChar 102 = 'f'
+intChar 103 = 'g'
+intChar 104 = 'h'
+intChar 105 = 'i'
+intChar 106 = 'j'
+intChar 107 = 'k'
+intChar 108 = 'l'
+intChar 109 = 'm'
+intChar 110 = 'n'
+intChar 111 = 'o'
+intChar 112 = 'p'
+intChar 113 = 'q'
+intChar 114 = 'r'
+intChar 115 = 's'
+intChar 116 = 't'
+intChar 117 = 'u'
+intChar 118 = 'v'
+intChar 119 = 'w'
+intChar 120 = 'x'
+intChar 121 = 'y'
+intChar 122 = 'z'
+
