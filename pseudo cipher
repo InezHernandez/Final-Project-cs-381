@@ -1,6 +1,7 @@
 import Data.Char
 import Data.Char (ord)
 import Data.Char (chr)
+
 -- cipher haskell calculator:
 -- in the README we would give the user directions:
 -- enter: firstCycle 7 * 10 then they would get back an ascii char -> p
@@ -25,9 +26,9 @@ data Expr = Add Expr Expr
 --Start implementing definitions
 
 expr :: Expr -> Maybe Int
-expr (Add x y) = case (expr x, expr y) of
-                 (Just x, Just y) -> Just (x + y)
-                 _                -> Nothing
+expr (Add x y) = let userinput = case (expr x, expr y) of
+                                (Just x, Just y) -> Just (x + y)
+                                _                -> Nothing
 -- expr (Sub x y) = case (expr x, expr y) of
 --                 (Just x, Just y) -> Just (x - y)
 --                 _                -> Nothing
@@ -77,20 +78,19 @@ expr (Add x y) = case (expr x, expr y) of
 --       | num < 0  = shiftStr (num + 1) (map shiftBackwards str)
 --       | num == 0 = str
 
---shiftForwards :: Char -> Char
---shiftForwards 'z' = 'a'
---shiftForwards c   = succ c
+shiftForwards :: Char -> Char
+shiftForwards 'z' = 'a'
+shiftForwards c   = succ c
 
---shiftBackwards :: Char -> Char
---shiftBackwards 'a' = 'z'
---shiftBackwards c   = pred c
+shiftBackwards :: Char -> Char
+shiftBackwards 'a' = 'z'
+shiftBackwards c   = pred c
 
 -- attempt to do the int -> Ascii conversion
 -- fromEnum / toEnum : fromEnum 'a' == 97 (toEnum 97::Char) == 'a'
 --toEnum :: Int -> a
 
-someVal = 97
-main = print (chr someVal) -- this is the one we want, but how to dynamically code? instead of 97 we would have someVal
+--someVal = 97
 intChar :: Int -> Char
 intChar 97 = 'a'
 intChar 98 = 'b'
@@ -118,4 +118,6 @@ intChar 119 = 'w'
 intChar 120 = 'x'
 intChar 121 = 'y'
 intChar 122 = 'z'
+
+--main = print (chr someVal) -- this is the one we want, but how to dynamically code? instead of 97 we would have someVal
 
